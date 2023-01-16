@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\visualStudioProjects\\TestADO.net\\TestADO.net\\TestADOnet.csproj": {}
+    "D:\\local repository\\dotnetwebapicrud\\TestADO.net\\TestADO.net\\TestADOnet.csproj": {}
   },
   "projects": {
-    "D:\\visualStudioProjects\\TestADO.net\\TestADO.net\\TestADOnet.csproj": {
+    "D:\\local repository\\dotnetwebapicrud\\TestADO.net\\TestADO.net\\TestADOnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\visualStudioProjects\\TestADO.net\\TestADO.net\\TestADOnet.csproj",
+        "projectUniqueName": "D:\\local repository\\dotnetwebapicrud\\TestADO.net\\TestADO.net\\TestADOnet.csproj",
         "projectName": "TestADOnet",
-        "projectPath": "D:\\visualStudioProjects\\TestADO.net\\TestADO.net\\TestADOnet.csproj",
+        "projectPath": "D:\\local repository\\dotnetwebapicrud\\TestADO.net\\TestADO.net\\TestADOnet.csproj",
         "packagesPath": "C:\\Users\\oshou\\.nuget\\packages\\",
-        "outputPath": "D:\\visualStudioProjects\\TestADO.net\\TestADO.net\\obj\\",
+        "outputPath": "D:\\local repository\\dotnetwebapicrud\\TestADO.net\\TestADO.net\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\oshou\\AppData\\Roaming\\NuGet\\NuGet.Config",

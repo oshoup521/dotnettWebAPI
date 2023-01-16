@@ -86,34 +86,35 @@ namespace TestADOnet.DAL
         public static Student GetStudent(int id)
         {
             Student newStudent = null;
-
-            try
+            try 
             {
-                MySqlConnection conn = new MySqlConnection(conString);
-                string query = "SELECT * FROM student WHERE sid="+id;
-                MySqlCommand mySqlCommand = new MySqlCommand(query, conn);
-                MySqlDataAdapter da = new MySqlDataAdapter();
-                da.SelectCommand = mySqlCommand;
-                DataSet ds = new DataSet();
-                da.Fill(ds);
+                MySqlConnection con = new MySqlConnection(conString);
+                con.Open();
+                string query = "SELECT * FROM student";
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                //cmd.CommandType = CommandType.Text;
+                MySqlDataReader reader = cmd.ExecuteReader();
 
-                DataTable dt = ds.Tables[0];
-                DataRowCollection rows = dt.Rows;
-                foreach (DataRow row in rows)
+                if (reader.Read())
                 {
-                    newStudent = new Student();
-                    newStudent.Sid = int.Parse(row["sid"].ToString());
-                    newStudent.Sname = row["sname"].ToString();
-                    newStudent.Course = row["course"].ToString();
-                }
+                    int sid = int.Parse(reader["sid"].ToString());
+                    string sname = reader["sname"].ToString();
+                    string course = reader["course"].ToString();
 
+                    newStudent = new Student { 
+                        Sid= sid,
+                        Sname= sname,
+                        Course= course
+                    };
+                }
             }
-            catch (Exception ex)
-            {
+            catch(Exception ex) 
+            { 
                 Console.WriteLine(ex.Message);
             }
-
             return newStudent;
+
+            
         }
 
         public static bool Delete(int id)
@@ -171,7 +172,7 @@ namespace TestADOnet.DAL
             con.ConnectionString = conString;
             try
             {
-                string query = "UPDATE student SET snmae='" + student.Sname + "', course='" + student.Course + "' WHERE sid=" + student.Sid;
+                string query = "UPDATE student SET sname='" + student.Sname + "', course='" + student.Course + "' WHERE sid=" + student.Sid;
                 MySqlCommand command = new MySqlCommand(query, con);
                 con.Open();
                 command.ExecuteNonQuery();
