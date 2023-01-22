@@ -33,13 +33,15 @@ namespace TestADOnet.Controllers
 
         // post api/<valuescontroller>
         [HttpPost]
+        [EnableCors]
         public void post(Student newStudent)
         {
             StudentManager.AddStudent(newStudent);
         }
 
         // put api/<valuescontroller>/5
-        [HttpPut("{id}")]
+        [HttpPut]
+        [EnableCors]
         public void put(Student student)
         {
             StudentManager.Update(student);

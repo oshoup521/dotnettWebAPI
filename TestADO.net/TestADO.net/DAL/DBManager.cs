@@ -90,7 +90,7 @@ namespace TestADOnet.DAL
             {
                 MySqlConnection con = new MySqlConnection(conString);
                 con.Open();
-                string query = "SELECT * FROM student";
+                string query = "SELECT * FROM student where sid="+id;
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 //cmd.CommandType = CommandType.Text;
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -124,7 +124,7 @@ namespace TestADOnet.DAL
             con.ConnectionString = conString;
             try
             {
-                string query = "DELETE FROM student WHERE sid=" + id;
+                string query = "DELETE FROM student WHERE sid="+id;
                 MySqlCommand command = new MySqlCommand(query, con);
                 con.Open();
                 command.ExecuteNonQuery();
